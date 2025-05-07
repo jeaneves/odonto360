@@ -7,9 +7,9 @@ const router = Router();
 router.post('/criausuario', usuarioController.criarUsuario);
 router.post('/login', usuarioController.login);
 
-router.get('/usuarios', autenticarUsuario, usuarioController.listarUsuarios);
-router.get('/usuarios/:id', autenticarUsuario, usuarioController.pegarUsuario);
+router.get('/listarusuarios', autenticarUsuario, usuarioController.listarUsuarios);
+router.get('/pegarusuario/:id', autenticarUsuario, usuarioController.pegarUsuario);
 
-router.delete('/usuarios/:id', autenticarUsuario, usuarioController.deletarUsuario);
+router.delete('/deletarUsuario/:id', autenticarUsuario, usuarioController.deletarUsuario);
 
 export default router;
