@@ -8,7 +8,7 @@ export async function criarUsuario(req: Request, res: Response){
     try {
         const usuario = await usuarioService.criarUsuario(req.body.nome, req.body.senha);
         res.status(201).json(usuario);
-        console.log('chegou aqui');
+       
     }catch(err: any){
         res.status(400).json({mensagem: err.messagem});
     }

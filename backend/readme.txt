@@ -7,6 +7,9 @@ npm install -D typescript ts-node-dev @types/express @types/pg @types/jsonwebtok
 npx tsc --init
 
 npm i ts-node-dev --save-dev
+
+npm install cors
+npm install @types/cors
 -----------------------------------------------------------------------------------------
 tabelas 
 CREATE TABLE usuarios (
