@@ -9,3 +9,32 @@ export async function criaFuncionario(req: Request, res: Response){
         res.status(400).json({message: err.message});
     }
 }
+
+export async function listarFuncionarios(req: Request, res: Response){
+    const funcionarios = await funcionarioService.listarFuncionarios();
+    res.json(funcionarios);
+}
+
+export async function buscaFuncionario(req: Request, res: Response) {
+    try {
+        const id = parseInt(req.params.id);
+        const funcionario = await funcionarioService.buscaFuncionario(id);
+        res.json(funcionario);
+        
+    } catch (error) {
+        res.status(404).json({mensagem: 'Funcionario não encontrado'});        
+    }
+    
+}
+
+export async function deletaFuncionario(req: Request, res: Response) {
+    try {
+        const id = parseInt(req.params.id);
+        const funcionario = await funcionarioService.deletaFuncionario(id);
+        res.json(funcionario);
+        
+    } catch (error) {
+        res.status(404).json({mensagem: 'Funcionario não encontrado'});        
+    }
+    
+}
