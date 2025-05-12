@@ -4,7 +4,7 @@ import { gerarToken } from '../utils/jwt';
 
 export async function criarUsuario(nome: string, senha: string){
     const existe = await db.query('select * from usuarios where nome = $1',[nome]);
-    console.log('chegou aqui');
+    
     if(existe.rowCount! > 0){
         throw new Error('Usuario ja existe');
     }

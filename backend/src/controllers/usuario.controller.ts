@@ -15,7 +15,7 @@ export async function criarUsuario(req: Request, res: Response){
 }
 
 export async function login(req: Request, res: Response){
-    console.log('chegou aqui');
+    
     try {
         const resultado = await usuarioService.login(req.body.nome, req.body.senha);
         res.json(resultado);       
